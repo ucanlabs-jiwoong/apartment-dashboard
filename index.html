@@ -53,8 +53,8 @@
                 <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 flex flex-col justify-between hover:shadow-md transition-shadow">
                     <div class="flex items-center justify-between mb-2">
                         <h3 class="text-sm font-medium text-gray-500">전체 거래 건수</h3>
-                        <div class="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600">
-                            <i class="fa-solid fa-file-contract text-sm"></i>
+                        <div class="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center text-lg">
+                            🏠
                         </div>
                     </div>
                     <div class="text-3xl font-bold text-emerald-700" id="total-count">-</div>
@@ -64,8 +64,8 @@
                 <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 flex flex-col justify-between hover:shadow-md transition-shadow">
                     <div class="flex items-center justify-between mb-2">
                         <h3 class="text-sm font-medium text-gray-500">평균 거래가격</h3>
-                        <div class="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600">
-                            <i class="fa-solid fa-chart-line text-sm"></i>
+                        <div class="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center text-lg">
+                            💰
                         </div>
                     </div>
                     <div class="text-3xl font-bold text-emerald-700" id="avg-price">-</div>
@@ -75,8 +75,8 @@
                 <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 flex flex-col justify-between hover:shadow-md transition-shadow">
                     <div class="flex items-center justify-between mb-2">
                         <h3 class="text-sm font-medium text-gray-500">최고 거래가격</h3>
-                        <div class="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600">
-                            <i class="fa-solid fa-arrow-trend-up text-sm"></i>
+                        <div class="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center text-lg">
+                            📈
                         </div>
                     </div>
                     <div class="text-3xl font-bold text-emerald-700" id="max-price">-</div>
@@ -86,8 +86,8 @@
                 <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 flex flex-col justify-between hover:shadow-md transition-shadow">
                     <div class="flex items-center justify-between mb-2">
                         <h3 class="text-sm font-medium text-gray-500">최저 거래가격</h3>
-                        <div class="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600">
-                            <i class="fa-solid fa-arrow-trend-down text-sm"></i>
+                        <div class="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center text-lg">
+                            📉
                         </div>
                     </div>
                     <div class="text-3xl font-bold text-emerald-700" id="min-price">-</div>
@@ -331,7 +331,11 @@
 
             data.forEach(row => {
                 const tr = document.createElement('tr');
-                tr.className = "hover:bg-emerald-50 transition-colors";
+                // 짝수 행 배경색 다르게(줄무늬), 마우스 오버 시 강조
+                tr.className = "bg-white even:bg-gray-50 hover:bg-emerald-100 transition-colors duration-150";
+                
+                // 거래금액이 5억(50000만원) 이상이면 빨간색, 아니면 초록색
+                const priceColorClass = row['_정규화금액'] >= 50000 ? 'text-red-500' : 'text-emerald-600';
                 
                 tr.innerHTML = `
                     <td class="px-6 py-4 text-sm text-gray-500">${row['거래일자'] || '-'}</td>
@@ -340,7 +344,7 @@
                     <td class="px-6 py-4 text-sm text-gray-500 text-right">${row['전용면적(㎡)'] || '-'}</td>
                     <td class="px-6 py-4 text-sm text-gray-500 text-right">${row['층'] || '-'}</td>
                     <td class="px-6 py-4 text-sm text-gray-500 text-right">${row['건축년도'] || '-'}</td>
-                    <td class="px-6 py-4 text-sm font-bold text-emerald-600 text-right">${formatKRW(row['_정규화금액'])}</td>
+                    <td class="px-6 py-4 text-sm font-bold ${priceColorClass} text-right">${formatKRW(row['_정규화금액'])}</td>
                 `;
                 tbody.appendChild(tr);
             });
