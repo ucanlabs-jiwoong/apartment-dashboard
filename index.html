@@ -29,7 +29,7 @@
     <header class="bg-white shadow-sm sticky top-0 z-10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
             <h1 class="text-2xl font-bold text-gray-900 flex items-center gap-2">
-                <i class="fa-solid fa-building text-blue-600"></i>
+                <i class="fa-solid fa-building text-emerald-600"></i>
                 우리 동네 아파트 실거래가 대시보드
             </h1>
             <div class="text-sm text-gray-500" id="last-updated">데이터 불러오는 중...</div>
@@ -40,7 +40,7 @@
         
         <!-- 로딩 표시기 -->
         <div id="loading" class="flex flex-col items-center justify-center py-20">
-            <i class="fa-solid fa-circle-notch fa-spin text-4xl text-blue-500 mb-4"></i>
+            <i class="fa-solid fa-circle-notch fa-spin text-4xl text-emerald-500 mb-4"></i>
             <p class="text-lg text-gray-600">실거래가 데이터를 분석하고 있습니다...</p>
         </div>
 
@@ -53,51 +53,51 @@
                 <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 flex flex-col justify-between hover:shadow-md transition-shadow">
                     <div class="flex items-center justify-between mb-2">
                         <h3 class="text-sm font-medium text-gray-500">전체 거래 건수</h3>
-                        <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
+                        <div class="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600">
                             <i class="fa-solid fa-file-contract text-sm"></i>
                         </div>
                     </div>
-                    <div class="text-3xl font-bold text-gray-900" id="total-count">-</div>
+                    <div class="text-3xl font-bold text-emerald-700" id="total-count">-</div>
                 </div>
 
                 <!-- 평균 거래가격 -->
                 <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 flex flex-col justify-between hover:shadow-md transition-shadow">
                     <div class="flex items-center justify-between mb-2">
                         <h3 class="text-sm font-medium text-gray-500">평균 거래가격</h3>
-                        <div class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center text-green-600">
+                        <div class="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600">
                             <i class="fa-solid fa-chart-line text-sm"></i>
                         </div>
                     </div>
-                    <div class="text-3xl font-bold text-gray-900" id="avg-price">-</div>
+                    <div class="text-3xl font-bold text-emerald-700" id="avg-price">-</div>
                 </div>
 
                 <!-- 최고 거래가격 -->
                 <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 flex flex-col justify-between hover:shadow-md transition-shadow">
                     <div class="flex items-center justify-between mb-2">
                         <h3 class="text-sm font-medium text-gray-500">최고 거래가격</h3>
-                        <div class="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center text-red-600">
+                        <div class="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600">
                             <i class="fa-solid fa-arrow-trend-up text-sm"></i>
                         </div>
                     </div>
-                    <div class="text-3xl font-bold text-gray-900" id="max-price">-</div>
+                    <div class="text-3xl font-bold text-emerald-700" id="max-price">-</div>
                 </div>
 
                 <!-- 최저 거래가격 -->
                 <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 flex flex-col justify-between hover:shadow-md transition-shadow">
                     <div class="flex items-center justify-between mb-2">
                         <h3 class="text-sm font-medium text-gray-500">최저 거래가격</h3>
-                        <div class="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600">
+                        <div class="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600">
                             <i class="fa-solid fa-arrow-trend-down text-sm"></i>
                         </div>
                     </div>
-                    <div class="text-3xl font-bold text-gray-900" id="min-price">-</div>
+                    <div class="text-3xl font-bold text-emerald-700" id="min-price">-</div>
                 </div>
             </div>
 
             <!-- 차트 섹션 -->
             <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
                 <h3 class="text-lg font-bold text-gray-800 mb-4 flex items-center gap-2">
-                    <i class="fa-solid fa-chart-area text-blue-500"></i>
+                    <i class="fa-solid fa-chart-area text-emerald-500"></i>
                     월별 평균 거래가격 추이
                 </h3>
                 <div class="relative h-80 w-full">
@@ -108,7 +108,7 @@
             <!-- 테이블 섹션 -->
             <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
                 <h3 class="text-lg font-bold text-gray-800 mb-4 flex items-center gap-2">
-                    <i class="fa-solid fa-table-list text-blue-500"></i>
+                    <i class="fa-solid fa-table-list text-emerald-500"></i>
                     최근 실거래가 목록
                 </h3>
                 <div class="table-container overflow-auto border rounded-lg border-gray-200">
@@ -271,13 +271,13 @@
                     datasets: [{
                         label: '평균 거래가격',
                         data: data,
-                        borderColor: '#3b82f6', // blue-500
-                        backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                        borderColor: '#10b981', // emerald-500
+                        backgroundColor: 'rgba(16, 185, 129, 0.1)',
                         borderWidth: 2,
-                        pointBackgroundColor: '#2563eb',
+                        pointBackgroundColor: '#059669', // emerald-600
                         pointBorderColor: '#fff',
                         pointHoverBackgroundColor: '#fff',
-                        pointHoverBorderColor: '#2563eb',
+                        pointHoverBorderColor: '#059669',
                         fill: true,
                         tension: 0.3
                     }]
@@ -331,7 +331,7 @@
 
             data.forEach(row => {
                 const tr = document.createElement('tr');
-                tr.className = "hover:bg-blue-50 transition-colors";
+                tr.className = "hover:bg-emerald-50 transition-colors";
                 
                 tr.innerHTML = `
                     <td class="px-6 py-4 text-sm text-gray-500">${row['거래일자'] || '-'}</td>
@@ -340,7 +340,7 @@
                     <td class="px-6 py-4 text-sm text-gray-500 text-right">${row['전용면적(㎡)'] || '-'}</td>
                     <td class="px-6 py-4 text-sm text-gray-500 text-right">${row['층'] || '-'}</td>
                     <td class="px-6 py-4 text-sm text-gray-500 text-right">${row['건축년도'] || '-'}</td>
-                    <td class="px-6 py-4 text-sm font-bold text-blue-600 text-right">${formatKRW(row['_정규화금액'])}</td>
+                    <td class="px-6 py-4 text-sm font-bold text-emerald-600 text-right">${formatKRW(row['_정규화금액'])}</td>
                 `;
                 tbody.appendChild(tr);
             });
